@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bioskop Hanz Film</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hanz Cinema</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movie.html">Movies</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="rating.html">Rating</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Login</h1>
+          
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <b href=" ">Lupa Password ? </b> <br><br>
+            <div class="form-group">
+                <button type="button" onclick="checkLogin()">Log in</button>
+            </div>
+            <p class="error" id="error-message">Username atau password salah, silakan coba lagi.</p>
+        </form>
+    </div>
+    
+    <div class="container1">
+        <div class="field">
+            
+        </div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+            
+            
+            var users = {
+                'admin': 'admin',
+                
+            };
+
+            if (users[usernameInput] && users[usernameInput] === passwordInput) {
+                window.location.href = 'tiket.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+    <section id="login">
+        <div class="container">
+            <h2>NOTE</h2>
+            <p>username default dan password adalah admin!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bioskop Hanz Cinema. All rights reserved.</p>
+    </footer>
+</body>
+</html>

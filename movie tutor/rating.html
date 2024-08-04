@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating Film - Bioskop Hanz Film</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bioskop Hanz Film</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movie.html">Movies</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="rating.html">Rating</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="testimonials container">
+            <h2>Testimoni Pelanggan</h2>
+
+            <div class="testimonial">
+                <img src="image/John.jpg" alt="John">
+                <div>
+                    <h3>John</h3>
+                    <p>"Filmnya keren !"</p>
+                    <small>Film: oppenheimer</small>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="image/Arthur.jpg" alt="Arthur">
+                <div>
+                    <h3>Arthur</h3>
+                    <p>"Harga terjangkau untuk nontonnya."</p>
+                    <small>Film: The Balkan line</small>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="image/Vera.jpg" alt="Vera">
+                <div>
+                    <h3>Vera</h3>
+                    <p>"Sangat merekomendasikan film ini."</p>
+                    <small>Film: Peaky Blinders</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="rating-form container">
+            <h2>Beri Rating dan Testimoni Anda</h2>
+            <form id="ratingForm">
+                <div class="form-group">
+                    <label for="photo">Foto Profil:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="movie">Pilih Film:</label>
+                    <select id="movie" name="movie" required>
+                        <option value="film1">The Balkan Line</option>
+                        <option value="film2">Re-LIFE</option>
+                        <option value="film3">Oppenheimer</option>
+                        <option value="film4">Kong</option>
+                        <option value="film5">Godzilla</option>
+                        <option value="film6">Godzilla VS Kong</option>
+                        <option value="film7">Barbie</option>
+                        <option value="film8">Batman</option>
+                        <option value="film9">Superman</option>
+                        <option value="film10">Harry Potter</option>
+                        <option value="film11">Dunkrik</option>
+                        <option value="film12">Truman Show</option>
+                        <option value="film13">Frieren</option>
+                        <option value="film14">Peaky Blinders</option>
+                        <option value="film15">Wonka</option>
+                        <option value="film16">Transformers</option>
+                        <option value="film17">Joker</option>
+                        <option value="film18">Conjuring</option>
+                        <option value="film19">Cernobyl</option>
+                        <option value="film20">The Flash</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ratting Film:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="movie" value="bintang 1"> Bintang 1</label><br>
+                        <label><input type="checkbox" name="movie" value="bintang 2"> Bintang 2</label><br>
+                        <label><input type="checkbox" name="movie" value="bintang 3"> Bintang 3</label><br>
+                        <label><input type="checkbox" name="movie" value="bintang 4"> Bintang 4</label><br>
+                        <label><input type="checkbox" name="movie" value="Bintang 5"> Bintang 5</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="testimonial">Testimoni:</label>
+                    <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="button">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bioskop Hanz Cinema. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('ratingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const movie = document.getElementById('movie').value;
+            const rating = document.getElementById('rating').value;
+            const testimonialText = document.getElementById('testimonial').value;
+            const photo = document.getElementById('photo').files[0]; // Get the selected photo
+
+            // Create new testimonial element
+            const testimonialDiv = document.createElement('div');
+            testimonialDiv.className = 'testimonial';
+
+            const img = document.createElement('img');
+            img.alt = name;
+            if (photo) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    img.src = event.target.result; // Set the selected photo as img source
+                };
+                reader.readAsDataURL(photo);
+            } else {
+                img.src = 'https://via.placeholder.com/100'; // Use placeholder image if no photo selected
+            }
+            testimonialDiv.appendChild(img);
+
+            const div = document.createElement('div');
+
+            const h3 = document.createElement('h3');
+            h3.textContent = name;
+            div.appendChild(h3);
+
+            const p = document.createElement('p');
+            p.textContent = `"${testimonialText}"`;
+            div.appendChild(p);
+
+            const small = document.createElement('small');
+            small.textContent = `Film: ${movie}, Rating: ${rating}`;
+            div.appendChild(small);
+
+            testimonialDiv.appendChild(div);
+
+            // Add new testimonial to the testimonials section
+            document.querySelector('.testimonials.container').appendChild(testimonialDiv);
+
+            // Clear the form
+            document.getElementById('ratingForm').reset();
+        });
+    </script>
+</body>
+</html>

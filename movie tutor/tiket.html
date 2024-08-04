@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Tiket - Bioskop Hanz Film</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bioskop Hanz Film</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="ticket-booking container">
+            <h2>Pesan Tiket Anda</h2>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="movie">Pilih Film:</label>
+                    <select id="movie" name="movie" required>
+                        <option value="film1">Film 1</option>
+                        <option value="film2">Film 2</option>
+                        <option value="film3">Film 3</option>
+                        <option value="film4">Film 4</option>
+                        <!-- Tambahkan lebih banyak opsi film sesuai kebutuhan -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Tanggal:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Waktu:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="seats">Jumlah Kursi:</label>
+                    <input type="number" id="seats" name="seats" min="1" required>
+                </div>
+                <button type="submit" class="button">Pesan Tiket</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bioskop Hanz Cinema. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('ticketForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const movie = document.getElementById('movie').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const seats = document.getElementById('seats').value;
+
+            // Create a booking confirmation message
+            const confirmationMessage = `
+                <h2>Pesanan Tiket Anda</h2>
+                <p>Nama: ${name}</p>
+                <p>Film: ${movie}</p>
+                <p>Tanggal: ${date}</p>
+                <p>Waktu: ${time}</p>
+                <p>Jumlah Kursi: ${seats}</p>
+            `;
+
+            // Display the confirmation message
+            document.querySelector('main').innerHTML = confirmationMessage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e50914;
+}
+
+header h1 {
+    margin: 0;
+    color: #e50914;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e50914;
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+#home h2, #movies h2, #showtimes h2, #contact h2 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2em;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.movie img {
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.movie img:hover {
+    transform: scale(1.05);
+}
+
+.movie h3 {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+}
+
+#movies {
+    background-color: #141414;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#movies .trailer video {
+    width: 80%;
+    height: auto;
+    border: 2px solid #e50914;
+    border-radius: 10px;
+}
+
+#showtimes, #contact {
+    background-color: #222222;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#showtimes h2, #contact h2 {
+    margin-top: 0;
+}
+
+#showtimes p, #contact p {
+    color: #bbbbbb;
+    font-size: 1.1em;
+}
+
+#register, #login {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#register h2, #login h2 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    text-align: left;
+    color: #bbbbbb;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    background-color: #333333;
+    color: white;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #bf0410;
+}
+
+#about h2, #contact h2 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2em;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#contact ul li {
+    margin: 10px 0;
+}
+
+#contact ul li a {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#contact ul li a:hover {
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.rating-form, .testimonials {
+    background-color: #222222;
+    padding: 50px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.rating-form h2, .testimonials h2 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #b0060e;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #444;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.testimonial h3 {
+    margin: 0;
+    color: #e50914;
+}
+
+.testimonial p {
+    margin: 5px 0;
+}
+
+.ticket-booking {
+    background-color: #222222;
+    padding: 50px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; 
+}
+
+.ticket-booking h2 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.ticket-booking .form-group {
+    margin-bottom: 15px;
+}
+
+.ticket-booking .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ticket-booking .form-group input, 
+.ticket-booking .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+.ticket-booking .form-group input[type="date"],
+.ticket-booking .form-group input[type="time"] {
+    cursor: pointer;
+}
+
+.ticket-booking .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ticket-booking .button:hover {
+    background-color: #b0060e;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    background-color: #141414;
+}
+
+main h1 {
+    color: #e50914;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    background-color: #222222; /* Background color for the form */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center-align text inside the form */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e50914; /* Color for labels */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #b0060e;
+    transform: scale(1.05); /* Add scale effect on hover */
+}
+
+button:active {
+    background-color: #8e000c; /* Darker shade when button is pressed */
+}
+
+.error {
+    color: #ff0000;
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Additional Containers for Layout */
+.container1, .container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container h2 {
+    color: #e50914;
+    font-size: 1.5em;
+}
+
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    border-top: 2px solid #e50914;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    section {
+        width: 100%;
+    }
+}
+
